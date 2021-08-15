@@ -1,0 +1,32 @@
+<div class="displayTable">
+    <div class="displayTableCell row">
+
+        <div class="authBlock row">
+            <h3>Registro de usuairo</h3>
+
+            <div class="formGroup col-md-6">
+                <input type="email" class="form-control" placeholder="Email Address" #userEmail required>
+            </div>
+
+            <div class="formGroup col-md-6">
+                <input type="password" class="form-control" placeholder="Password" #userPwd required>
+            </div>
+
+            <br><br>
+            <div class="formGroup col-md-1">
+                <input type="button" class="btn btn-block btn-primary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+            </div>
+
+            <div class="formGroup col-md-3">
+                <button type="button" class="btn btn-block btn-danger" (click)="authService.GoogleAuth()">
+            Continue with Google
+          </button>
+            </div>
+        </div>
+        <br><br>
+        <div class="redirectToLogin">
+            <span>Ya estas registrado? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+        </div>
+    </div>
+
+</div>

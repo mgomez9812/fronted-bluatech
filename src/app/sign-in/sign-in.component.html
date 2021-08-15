@@ -1,0 +1,35 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+        <div class="row">
+
+
+
+            <div class="authBlock row">
+                <h3>Signin</h3>
+                <div class="formGroup col-md-6">
+                    <input type="text" class="form-control" placeholder="Username" #userName required>
+                </div>
+
+                <div class="formGroup col-md-6">
+                    <input type="password" class="form-control" placeholder="Password" #userPassword required>
+                </div>
+
+                <br><br>
+                <div class="formGroup col-md-1">
+                    <input type="button" class="btn btn-primary btn-block" value="Sign in" (click)="authService.SignIn(userName.value, userPassword.value)">
+                </div>
+
+                <div class="formGroup col-md-3">
+                    <button type="button" class="btn btn-danger btn-block" (click)="authService.GoogleAuth()">
+                        Google
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="redirectToLogin">
+                <span>No estas registrado?<span class="redirect" routerLink="/sign-up"> Registro</span></span>
+            </div>
+        </div>
+    </div>
+</div>

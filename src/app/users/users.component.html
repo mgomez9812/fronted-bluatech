@@ -1,0 +1,39 @@
+<nav class="navbar navbar-dark bg-dark" style="height: 50px;">
+    <!-- Navbar content -->
+</nav>
+
+
+<div class="body-users">
+    <a [routerLink]="['/add-users']" class="btn btn-sm btn-success btn-icon btn-round">
+        <i class="fa fa-edit"></i> Nuevo
+    </a>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th width="10%">N0.</th>
+                <th width="10%">Nombre</th>
+                <th width="10%">Apellido</th>
+                <th width="10%">edad</th>
+                <th width="10%">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of users; index as i'>
+                <td>{{i + 1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.age}}</td>
+                <td>
+                    <a [routerLink]="['/edit-users', user._id]" class="btn btn-sm btn-success btn-icon btn-round">
+                        <i class="fa fa-edit"></i> Editar
+                    </a>
+                    <a class="btn btn-sm btn-danger btn-icon btn-round" style="margin-left: 5px;" (click)="destroyUser(user._id)">
+                        <i class="fa fa-edit"></i> Eliminar
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
